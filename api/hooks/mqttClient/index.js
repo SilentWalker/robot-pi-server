@@ -24,7 +24,7 @@ module.exports = function mqttClient(sails){
           let msgArr = message.toString().split(',');
           //[ 'pi', 'pi01', 'move', '0', '0', '535' ]
           if(msgArr.length ===  6){
-            pubsub.emit('msg', (msgArr[1], [msgArr[2], msgArr[3], msgArr[4]].join('|')));
+            pubsub.emit('msg', msgArr[1], [msgArr[2], msgArr[3], msgArr[4], msgArr[5]].join('|'));
           }
         })
       }
